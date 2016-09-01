@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>filter</title>
+  <link type="text/css" rel="stylesheet" href="style.css" >
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+<script src="script.js"> </script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="MyController as ctrl">
+<label>Search: <input ng-model="searchText"></label>
+<table class="lf" id="searchTextResults">
+  <tr><th>Name</th><th>Phone</th></tr>
+  <tr ng-repeat="friend in ctrl.myFriends | filter:searchText">
+    
+    <td ng-cloak>{{friend.name}}</td>
+    <td ng-cloak>{{friend.phone}}</td>
+
+  </tr>
+</table>
+<hr>
+<label>Any: <input ng-model="search.$"></label> <br>
+<label>Name only <input ng-model="search.name"></label><br>
+<label>Phone only <input ng-model="search.phone"></label><br>
+<label>Equality <input type="checkbox" ng-model="strict"></label><br>
+<table class="lf" id="searchObjResults">
+  <tr><th>Name</th><th>Phone</th></tr>
+  <tr ng-repeat="friendObj in ctrl.myFriends | filter:search:strict">
+   
+    <td ng-cloak>{{friendObj.name}}</td>
+    <td ng-cloak>{{friendObj.phone}}</td>
+    
+  </tr>
+</table>
+</div>
+
+</body>
+</html>
