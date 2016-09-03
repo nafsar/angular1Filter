@@ -19,20 +19,7 @@
 
   </tr>
 </table>
-<hr>
-<label>Any: <input ng-model="search.$"></label> <br>
-<label>Name only <input ng-model="search.name"></label><br>
-<label>Phone only <input ng-model="search.phone"></label><br>
-<label>Equality <input type="checkbox" ng-model="strict"></label><br>
-<table class="lf" id="searchObjResults">
-  <tr><th>Name</th><th>Phone</th></tr>
-  <tr ng-repeat="friendObj in ctrl.myFriends | filter:search:strict">
-   
-    <td ng-cloak>{{friendObj.name}}</td>
-    <td ng-cloak>{{friendObj.phone}}</td>
-    
-  </tr>
-</table>
+
 </div>
 
 </body>
